@@ -66,5 +66,5 @@ jobs:
 
           echo 'Matrix: Refs'
           echo '--------------------'
-          echo '${{ steps.set-matrix-refs.outputs.matrix }}'
+          echo '${{ steps.set-refs.outputs.matrix }}'
           echo
