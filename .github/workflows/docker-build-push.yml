@@ -23,11 +23,13 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Check tag name
-        run: echo "Tag name: ${{ github.event.release.tag_name }}"
+        env:
+          TAG_NAME: ${{ github.event.release.tag_name }}
+        run: echo "Tag name: $TAG_NAME"
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/ansible-lint:${{ github.event.release.tag_name || 'latest' }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/ansible-lint:${{ github.event.release.tag_name != '' && github.event.release.tag_name || 'latest' }}
