@@ -24,7 +24,7 @@ jobs:
 
       - name: Check tag name
         env:
-          TAG_NAME: ${{ github.event.release.tag_name }}
+          TAG_NAME: ${{ github.event.release.tag_name || 'latest' }}
         run: echo "Tag name: $TAG_NAME"
 
       - name: Build and push Docker image
