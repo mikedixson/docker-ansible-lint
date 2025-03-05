@@ -34,3 +34,5 @@ jobs:
           file: ./Dockerfiles/Dockerfile.latest
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/ansible-lint:${{ github.event.release.tag_name || 'latest' }}
+          build-args: |
+            VERSION=${{ github.event.release.tag_name || 'latest' }}
