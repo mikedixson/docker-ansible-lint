@@ -14,7 +14,7 @@ env:
     [
       {
         "NAME":    "al",
-        "VERSION": ["latest", "6", "5"],
+        "VERSION": ["latest", "7", "6", "5"],
         "FLAVOUR": ["alpine", "latest"],
         "ARCH":    ["linux/amd64", "linux/386", "linux/arm64"]
       }
