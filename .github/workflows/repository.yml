@@ -9,6 +9,9 @@ on:
       - .github/labels.yml
   workflow_dispatch:  # Added manual trigger
 
+permissions:
+  issues: write
+
 jobs:
   labels:
     name: Labels
