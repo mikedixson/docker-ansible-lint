@@ -3,11 +3,7 @@ name: Build and Push Docker Image
 on:
   release:
     types: [published]
-  workflow_dispatch:
-    inputs:
-      name:
-        description: 'Run workflow manually'
-        required: false
+  workflow_dispatch: # Corrected syntax
 
 jobs:
   build-and-push:
